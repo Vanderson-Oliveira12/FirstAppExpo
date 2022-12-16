@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import { RFPercentage } from "react-native-responsive-fontsize";
-import { Button, ButtonSkip } from '../Login/style';
+import { Button, TextButton } from "../../Components/Button/style";
 
 
 export const Container = styled.View`
@@ -35,14 +35,30 @@ export const Label = styled.Text`
     margin-bottom: 11px;
 `
 
-export const ButtonSignIn = styled(Button)`
-
-
+export const ContainerButtons = styled.View`
+    align-items: center;
+    width: 100%;
+    max-width: 250px;
 `
 
-export const TextButton = styled.Text`
+export const ButtonSignIn = styled(Button)`
     
+`
 
+export const TextButtonIn = styled(TextButton)`
+    color: #FFF;
+`
+
+export const ButtonSignUp = styled(Button)`
+    background-color: transparent;
+    margin-top: 14px;
+    flex-direction: row;
+    justify-content: center;
+`
+
+export const TextButtonUp = styled(TextButton)`
+    color: ${({ theme }) => theme.COLORS.VIOLET_COLOR};
+    margin-left: 8px;
 `
 
 

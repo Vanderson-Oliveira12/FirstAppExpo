@@ -1,4 +1,4 @@
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, Text } from "react-native";
 import {
     Container,
     ContainerInputs,
@@ -6,8 +6,12 @@ import {
     Input,
     Label,
     ButtonSignIn,
-    TextButton
+    ButtonSignUp,
+    TextButtonIn,
+    TextButtonUp,
+    ContainerButtons,
 } from "./style";
+
 
 export default function SignIn() {
     return (
@@ -27,11 +31,21 @@ export default function SignIn() {
                     <Input style={styles.shadow} placeholder="*******" />
                 </InputField>
             </ContainerInputs>
-            <ButtonSignIn>
-                <TextButton>
-                    Sign In
-                </TextButton>
-            </ButtonSignIn>
+            <ContainerButtons>
+                <ButtonSignIn activeOpacity={.9}>
+                    <TextButtonIn>
+                        Sign In
+                    </TextButtonIn>
+                </ButtonSignIn>
+                <ButtonSignUp>
+                    <Text>
+                        Don’t have account?
+                    </Text>
+                    <TextButtonUp>
+                        Sign Up
+                    </TextButtonUp>
+                </ButtonSignUp>
+            </ContainerButtons>
         </Container>
     )
 }
