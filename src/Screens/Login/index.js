@@ -4,10 +4,10 @@ import {
     Text,
     ContainerTexts,
     ContainerButtons,
-    ButtonUp,
-    ButtonSkip,
-    TextBtn,
 } from "./style";
+
+import { Button } from "../../Components/Button";
+
 import { Image } from "react-native";
 
 
@@ -28,16 +28,8 @@ export default function Login() {
                 </Text>
             </ContainerTexts>
             <ContainerButtons>
-                <ButtonUp activeOpacity={.9}>
-                    <TextBtn color="#FFFFFF">
-                        Sign up
-                    </TextBtn>
-                </ButtonUp>
-                <ButtonSkip activeOpacity={.9}>
-                    <TextBtn color="#5667FD">
-                        Skip
-                    </TextBtn>
-                </ButtonSkip>
+                <Button content="Sign Up" />
+                <Button transparent={true} content="Skip" />
             </ContainerButtons>
         </Container>
     )

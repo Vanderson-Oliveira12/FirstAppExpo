@@ -1,16 +1,12 @@
-import { Image, StyleSheet, Text } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import {
     Container,
     ContainerInputs,
-    InputField,
-    Input,
-    Label,
-    ButtonSignIn,
-    ButtonSignUp,
-    TextButtonIn,
-    TextButtonUp,
     ContainerButtons,
 } from "./style";
+
+import { Button } from "../../Components/Button";
+import { Input } from "../../Components/Input";
 
 
 export default function SignIn() {
@@ -18,33 +14,11 @@ export default function SignIn() {
         <Container>
             <Image resizeMode="contain" source={require("../../Assets/img/SignIn.png")} />
             <ContainerInputs>
-                <InputField>
-                    <Label>
-                        Email address
-                    </Label>
-                    <Input style={styles.shadow} placeholder="name@example.com" />
-                </InputField>
-                <InputField>
-                    <Label>
-                        Password
-                    </Label>
-                    <Input style={styles.shadow} placeholder="*******" />
-                </InputField>
+                <Input label="Email" placeholder="Seu melhor E-mail..." />
+                <Input label="Senha" placeholder="******" />
             </ContainerInputs>
             <ContainerButtons>
-                <ButtonSignIn activeOpacity={.9}>
-                    <TextButtonIn>
-                        Sign In
-                    </TextButtonIn>
-                </ButtonSignIn>
-                <ButtonSignUp>
-                    <Text>
-                        Don’t have account?
-                    </Text>
-                    <TextButtonUp>
-                        Sign Up
-                    </TextButtonUp>
-                </ButtonSignUp>
+                <Button content="Sign in" />
             </ContainerButtons>
         </Container>
     )

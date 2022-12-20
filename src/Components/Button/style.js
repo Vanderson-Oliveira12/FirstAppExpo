@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
-export const Button = styled.TouchableOpacity`
+export const ButtonDefault = styled.TouchableOpacity`
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_DEFAULT};
     border-radius: 12px;
     padding: 18px;
@@ -13,5 +13,14 @@ export const Button = styled.TouchableOpacity`
 export const TextButton = styled.Text`
     font-size: ${RFPercentage(1.8)};
     font-weight: 600;
-    color:${(children) => children.color};
+    color: #FFF;
+`
+
+export const ButtonTransparent = styled(ButtonDefault)`
+    background-color: transparent;
+`
+
+export const TextButtonTransparent = styled(TextButton)`
+    margin-top: 12px;
+    color: ${({ theme }) => theme.COLORS.VIOLET_COLOR};
 `

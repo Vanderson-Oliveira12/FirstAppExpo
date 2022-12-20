@@ -1,6 +1,5 @@
 import styled from "styled-components/native";
 import { RFPercentage } from "react-native-responsive-fontsize";
-import { Button, TextButton } from "../../Components/Button/style";
 
 export const Container = styled.View`
     height: 100%;
@@ -31,17 +30,5 @@ export const Text = styled.Text`
 export const ContainerButtons = styled.View`
     width: 80%;
     align-items: center;
-`
-
-export const ButtonUp = styled(Button)`
-`
-
-export const ButtonSkip = styled(Button)`
-    background-color: transparent;
-    margin-top: 12px;
-`
-
-export const TextBtn = styled(TextButton)`
-    color:${(children) => children.color};
 `
 
