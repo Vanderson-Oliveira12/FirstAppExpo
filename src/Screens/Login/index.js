@@ -1,5 +1,4 @@
 import {
-    Container,
     Title,
     Text,
     ContainerTexts,
@@ -7,6 +6,7 @@ import {
 } from "./style";
 
 import { Button } from "../../Components/Button";
+import Container from "../../Components/Container";
 
 import { Image } from "react-native";
 

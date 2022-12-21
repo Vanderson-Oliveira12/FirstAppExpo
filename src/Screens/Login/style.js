@@ -1,13 +1,6 @@
 import styled from "styled-components/native";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
-export const Container = styled.View`
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: space-around;
-`
-
 export const ContainerTexts = styled.View`
     align-items: center;
     max-width: 300px;

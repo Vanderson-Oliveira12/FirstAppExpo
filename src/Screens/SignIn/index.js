@@ -1,11 +1,11 @@
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, Text } from "react-native";
 import {
-    Container,
     ContainerInputs,
     ContainerButtons,
 } from "./style";
 
-import { Button } from "../../Components/Button";
+import { Button, ButtonSign } from "../../Components/Button";
+import Container from "../../Components/Container";
 import { Input } from "../../Components/Input";
 
 
@@ -19,6 +19,7 @@ export default function SignIn() {
             </ContainerInputs>
             <ContainerButtons>
                 <Button content="Sign in" />
+                <ButtonSign description="Don’t have account?" textButton="Sign up" />
             </ContainerButtons>
         </Container>
     )
