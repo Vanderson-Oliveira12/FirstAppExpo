@@ -3,6 +3,7 @@ import { StatusBar, SafeAreaView } from "react-native";
 import Login from "./src/Screens/Login";
 import SignIn from "./src/Screens/SignIn";
 import SignUp from "./src/Screens/SignUp";
+import Grade from "./src/Screens/SignUp/Grade";
 
 import StyledGuide from './src/Themes/themes';
 
@@ -12,7 +13,7 @@ export default function App() {
     <ThemeProvider theme={StyledGuide}>
       <SafeAreaView>
         <StatusBar />
-        <SignUp />
+        <Grade />
       </SafeAreaView>
     </ThemeProvider>
   );

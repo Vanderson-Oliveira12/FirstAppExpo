@@ -18,18 +18,20 @@ export function Input({ password = true, label, placeholder }) {
                 <InputDefault placeholder={placeholder} />
             </Container>
         )
+        
             :
-            (
-                <Container>
-                    <Label>
-                        {label}
-                    </Label>
-                    <InputAreaPassword>
-                        <InputPassword placeholder={placeholder} />
-                        <Image source={require('../../Assets/img/eye.png')} />
-                    </InputAreaPassword>
-                </Container>
-            )
+        
+        (
+            <Container>
+                <Label>
+                    {label}
+                </Label>
+                <InputAreaPassword>
+                    <InputPassword secureTextEntry={true} placeholder={placeholder} />
+                    <Image source={require('../../Assets/img/eye.png')} />
+                </InputAreaPassword>
+            </Container>
+        )
 
     )
 }

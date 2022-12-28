@@ -5,7 +5,8 @@ export default {
         TEXT_GRAY: "#636D77",
         BACKGROUND: "#F4F5F9",
         BACKGROUND_DEFAULT: "#5667FD",
-        VIOLET_COLOR: "#5667FD"
+        VIOLET_COLOR: "#5667FD",
+        SELECT_COLOR: "#EDEDED"
     }
 
 }
