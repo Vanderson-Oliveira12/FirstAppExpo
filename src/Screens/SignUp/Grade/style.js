@@ -14,7 +14,11 @@ export const Title = styled.Text`
     font-weight: 600;
 `
 
-export const Modal = styled.TouchableOpacity`
+export const Modal = styled.View`
+    margin-top: 16px;
+`
+
+export const ModalButton = styled.TouchableOpacity`
     background-color: ${({ theme }) => theme.COLORS.SELECT_COLOR};
     width: 100%;
     height: 55px;
@@ -22,7 +26,6 @@ export const Modal = styled.TouchableOpacity`
     border-top-right-radius: 8px;
     justify-content: center;
     padding-left: 17px;
-    margin-top: 16px;
 `
 
 export const ModalContent = styled.View`

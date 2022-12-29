@@ -1,25 +1,55 @@
-import { SelectContainer } from "./style";
-import { Picker } from '@react-native-picker/picker';
-import { StyleSheet } from "react-native";
+import { Text } from "react-native";
+import { useState } from "react";
+import {
+    Modal,
+    ModalButton,
+    ModalContent,
+    ModalItem
+} from './style';
 
 export default function Select({ children }) {
+
+    const [modalActive, setModalActive] = useState(false);
+
+    function hasModalActive() {
+        setModalActive(modalActive == false ? true : false)
+    }
+
     return (
-        <SelectContainer>
-            <Picker
-                style={styles.select}
-                mode="dropdown"
+        <Modal>
+            <ModalButton
+                onPress={() => hasModalActive()}
+                activeOpacity={1}
             >
+                <Text>
+                    Grade 1 - 10
+                </Text>
+            </ModalButton>
+            <ModalContent style={
+                modalActive == false ? {
+                    height: 0,
+                    display: "none",
+                }
+                    :
+                    {
+                        height: 'auto',
+                        display: "flex"
+                    }
+            }>
                 {
                     children
                 }
-            </Picker>
-        </SelectContainer>
+            </ModalContent>
+        </Modal>
     )
 }
 
-const styles = StyleSheet.create({
-    select: {
-        backgroundColor: "transparent",
-        color: "#636D77",
-    }
-})
+export function SelectItem({ value }) {
+    return (
+        <ModalItem>
+            <Text>
+                {value}
+            </Text>
+        </ModalItem>
+    )
+}
