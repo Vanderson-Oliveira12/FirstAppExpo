@@ -1,13 +1,14 @@
-import { Text } from "react-native";
+import { StyleSheet, Text, Image } from "react-native";
 import { useState } from "react";
 import {
     Modal,
     ModalButton,
     ModalContent,
-    ModalItem
+    ModalItem,
+    Title
 } from './style';
 
-export default function Select({ children }) {
+export default function Select({ children, grade }) {
 
     const [modalActive, setModalActive] = useState(false);
 
@@ -21,21 +22,12 @@ export default function Select({ children }) {
                 onPress={() => hasModalActive()}
                 activeOpacity={1}
             >
-                <Text>
-                    Grade 1 - 10
-                </Text>
+                <Title>
+                    { grade }
+                </Title>
+                <Image source={modalActive === false ? require("../../Assets/img/arrow-down.png") : require('../../Assets/img/arrow-up.png')}/>
             </ModalButton>
-            <ModalContent style={
-                modalActive == false ? {
-                    height: 0,
-                    display: "none",
-                }
-                    :
-                    {
-                        height: 'auto',
-                        display: "flex"
-                    }
-            }>
+            <ModalContent style={modalActive === false ? styles.modalOff : styles.modalOn}>
                 {
                     children
                 }
@@ -47,9 +39,24 @@ export default function Select({ children }) {
 export function SelectItem({ value }) {
     return (
         <ModalItem>
-            <Text>
+            <Text style={styles.itemTitle}>
                 {value}
             </Text>
+            <Image style={styles.image} source={require('../../Assets/img/modal.png')} />
         </ModalItem>
     )
 }
+
+const styles = StyleSheet.create({
+    modalOn: {
+        height: 'auto',
+        display: 'flex',
+    },
+    modalOff: {
+        height: 0,
+        display: 'none',
+    },
+    itemTitle: { 
+        marginRight: 12,
+    },
+})

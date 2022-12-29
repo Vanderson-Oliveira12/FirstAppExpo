@@ -1,4 +1,5 @@
 import {
+    ContainerButtons,
     ButtonDefault,
     ButtonTransparent,
     TextButtonTransparent,
@@ -30,7 +31,7 @@ export function Button({ transparent = false, content }) {
     )
 }
 
-export function ButtonSign({description, textButton}) {
+export function ButtonSign({ description, textButton }) {
     return (
         <ButtonUpContainer>
             <TextUp>
@@ -38,9 +39,26 @@ export function ButtonSign({description, textButton}) {
             </TextUp>
             <ButtonSignUp activeOpacity={0.9}>
                 <TextSign>
-                    { textButton }
+                    {textButton}
                 </TextSign>
             </ButtonSignUp>
         </ButtonUpContainer>
+    )
+}
+
+export function ButtonsSkip() {
+    return (
+        <ContainerButtons>
+            <ButtonDefault activeOpacity={.9}>
+                <TextButton>
+                    Next
+                </TextButton>
+            </ButtonDefault>
+            <ButtonTransparent activeOpacity={.9}>
+                <TextButtonTransparent>
+                    Skip
+                </TextButtonTransparent>
+            </ButtonTransparent>
+        </ContainerButtons>
     )
 }

@@ -47,3 +47,10 @@ export const TextSign = styled(TextButton)`
 export const ButtonSignUp = styled.TouchableOpacity`
     padding: 10px;
 `
+
+export const ContainerButtons = styled.View`
+    padding-top: 28px;
+    width: 80%;
+    align-items: center;
+    margin: 0 auto;
+`
