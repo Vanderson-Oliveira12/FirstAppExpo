@@ -1,4 +1,4 @@
-import { StyleSheet, Text, Image } from "react-native";
+import { StyleSheet, Text, Image, Pressable } from "react-native";
 import { useState } from "react";
 import {
     Modal,
@@ -23,9 +23,9 @@ export default function Select({ children, grade }) {
                 activeOpacity={1}
             >
                 <Title>
-                    { grade }
+                    {grade}
                 </Title>
-                <Image source={modalActive === false ? require("../../Assets/img/arrow-down.png") : require('../../Assets/img/arrow-up.png')}/>
+                <Image source={modalActive === false ? require("../../Assets/img/arrow-down.png") : require('../../Assets/img/arrow-up.png')} />
             </ModalButton>
             <ModalContent style={modalActive === false ? styles.modalOff : styles.modalOn}>
                 {
@@ -36,27 +36,45 @@ export default function Select({ children, grade }) {
     )
 }
 
-export function SelectItem({ value }) {
+export function SelectItems({ data, onSelect }) {
+
+    const [useOption, setUserOption] = useState(null);
+
+    function handleItemSelect(value) {
+        console.log(value)
+        setUserOption(value)
+    }
+
     return (
-        <ModalItem>
-            <Text style={styles.itemTitle}>
-                {value}
-            </Text>
-            <Image style={styles.image} source={require('../../Assets/img/modal.png')} />
-        </ModalItem>
+        data.map(item => (
+            <Pressable onPress={() => handleItemSelect(item.value)}>
+                <ModalItem style={item.value === useOption ? styles.selected : null}>
+                    <Text style={item.value === useOption ? styles.itemTitleOn : styles.itemTitleOff}>
+                        {item.value}
+                    </Text>
+                    <Image style={styles.image} source={require('../../Assets/img/modal.png')} />
+                </ModalItem>
+            </Pressable>
+        ))
     )
 }
 
 const styles = StyleSheet.create({
     modalOn: {
-        height: 'auto',
         display: 'flex',
     },
     modalOff: {
-        height: 0,
         display: 'none',
     },
-    itemTitle: { 
+    selected: {
+        backgroundColor: "#5667FD",
+    },
+    itemTitleOff: {
+        color: "#364356",
         marginRight: 12,
+    },
+    itemTitleOn: {
+        marginRight: 12,
+        color: "#FFF"
     },
 })

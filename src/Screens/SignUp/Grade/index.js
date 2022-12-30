@@ -6,8 +6,18 @@ import {
     ContainerButtons
 } from "./style";
 
-import { ButtonsSkip, Button } from "../../../Components/Button";
-import Select, { SelectItem } from "../../../Components/Select";
+import { Button } from "../../../Components/Button";
+import Select, { SelectItems } from "../../../Components/Select";
+
+const dataRadio = [
+    { value: "Teste 1" },
+    { value: "Teste 2" }
+]
+
+const dataRadioTwo = [
+    { value: "Teste 3" },
+    { value: "Teste 4" }
+]
 
 export default function Grade() {
 
@@ -22,42 +32,23 @@ export default function Grade() {
                 <Select
                     grade="Grade  1 - 5"
                 >
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
+                    <SelectItems data={dataRadio} />
                 </Select>
                 <Select
                     grade="Grade  6 - 9"
                 >
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
+                    <SelectItems data={dataRadioTwo} />
                 </Select>
                 <Select
                     grade="Grade  10 - 11"
                 >
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
+                    <SelectItems data={dataRadioTwo} />
+
                 </Select>
                 <Select
                     grade="Grade  12 - 13"
                 >
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
-                    <SelectItem value="Item Teste" />
+                    <SelectItems data={dataRadioTwo} />
                 </Select>
             </Content>
             <ContainerButtons>
