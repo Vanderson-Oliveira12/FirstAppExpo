@@ -36,12 +36,11 @@ export default function Select({ children, grade }) {
     )
 }
 
-export function SelectItems({ data, onSelect }) {
+export function SelectItems({ data }) {
 
     const [useOption, setUserOption] = useState(null);
 
     function handleItemSelect(value) {
-        console.log(value)
         setUserOption(value)
     }
 
@@ -52,7 +51,7 @@ export function SelectItems({ data, onSelect }) {
                     <Text style={item.value === useOption ? styles.itemTitleOn : styles.itemTitleOff}>
                         {item.value}
                     </Text>
-                    <Image style={styles.image} source={require('../../Assets/img/modal.png')} />
+                    <Image style={styles.image} source={item.image} />
                 </ModalItem>
             </Pressable>
         ))

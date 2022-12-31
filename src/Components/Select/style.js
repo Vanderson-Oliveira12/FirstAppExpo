@@ -38,10 +38,11 @@ export const ModalContent = styled.View`
 export const ModalItem = styled.View`
     background-color: #E6E6E6;
     height: 55px;
+    width: 150px;
     padding: 0 8px;
     align-items: center;
     justify-content: center;
     flex-direction: row;
     border-radius: 8px;
-    margin:6px;
+    margin: 6px;
 `

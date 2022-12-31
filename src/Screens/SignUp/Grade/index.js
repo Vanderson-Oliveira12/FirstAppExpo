@@ -9,14 +9,14 @@ import {
 import { Button } from "../../../Components/Button";
 import Select, { SelectItems } from "../../../Components/Select";
 
-const dataRadio = [
-    { value: "Teste 1" },
-    { value: "Teste 2" }
-]
+import { art, cience, math, regua } from "../../../Assets/img/image";
 
-const dataRadioTwo = [
-    { value: "Teste 3" },
-    { value: "Teste 4" }
+
+const dataRadio = [
+    { value: "Arts", image: art },
+    { value: "Science", image: cience },
+    { value: "Maths", image: regua },
+    { value: "Commerce", image: math }
 ]
 
 export default function Grade() {
@@ -37,18 +37,18 @@ export default function Grade() {
                 <Select
                     grade="Grade  6 - 9"
                 >
-                    <SelectItems data={dataRadioTwo} />
+                    <SelectItems data={dataRadio} />
                 </Select>
                 <Select
                     grade="Grade  10 - 11"
                 >
-                    <SelectItems data={dataRadioTwo} />
+                    <SelectItems data={dataRadio} />
 
                 </Select>
                 <Select
                     grade="Grade  12 - 13"
                 >
-                    <SelectItems data={dataRadioTwo} />
+                    <SelectItems data={dataRadio} />
                 </Select>
             </Content>
             <ContainerButtons>
