@@ -29,9 +29,3 @@ export const InputPassword = styled(InputDefault)`
     width: 90%;
 `
 
-export const Label = styled.Text`
-    color: ${({ theme }) => theme.COLORS.TEXT_GRAY};
-    font-size: ${RFPercentage(2.6)};
-    margin-bottom: 11px;
-`
-

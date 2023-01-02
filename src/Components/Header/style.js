@@ -15,18 +15,6 @@ export const Content = styled.View`
 export const ContentText = styled.View`
 `
 
-export const Title = styled.Text`
-    color: ${({ theme }) => theme.COLORS.TEXT_DARK};
-    font-size: ${RFPercentage(2.8)};
-    font-weight: 600;
-`
-
-export const TitleName = styled.Text`
-    font-size: ${RFPercentage(2.2)};
-    color: ${({ theme }) => theme.COLORS.TEXT_GRAY};
-    font-weight: 600;
-`
-
 export const ImageBox = styled.View`
     align-items: center;
     justify-content: center;

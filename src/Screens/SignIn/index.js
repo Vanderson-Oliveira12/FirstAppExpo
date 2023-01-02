@@ -1,18 +1,19 @@
-import { Image, StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
+import Container from "../../Components/Container";
 import {
     ContainerInputs,
     ContainerButtons,
 } from "./style";
 
 import { Button, ButtonSign } from "../../Components/Button";
-import Container from "../../Components/Container";
 import { Input } from "../../Components/Input";
 
+import Hero from '../../Assets/svg/hero-signIn.svg';
 
 export default function SignIn() {
     return (
         <Container>
-            <Image resizeMode="contain" source={require("../../Assets/img/SignIn.png")} />
+            <Hero />
             <ContainerInputs>
                 <Input label="Email" placeholder="Seu melhor E-mail..." />
                 <Input label="Senha" placeholder="******" />

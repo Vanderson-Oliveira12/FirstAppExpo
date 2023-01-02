@@ -1,13 +1,12 @@
 import { StyleSheet } from "react-native";
 
 import Person from '../../Assets/svg/TESTE.svg';
+import { Text } from "../Text";
 
 import {
     Container,
-    Title,
-    TitleName,
-    Content,
     ContentText,
+    Content,
     ImageBox
 } from "./style";
 
@@ -16,12 +15,12 @@ export default function Header() {
         <Container>
             <Content>
                 <ContentText>
-                    <Title>
+                    <Text weight="600" size={3} color="#364356" >
                         Good evening!
-                    </Title>
-                    <TitleName>
+                    </Text>
+                    <Text weight="600" size={2.2} color="#636D77">
                         Hardline Scott
-                    </TitleName>
+                    </Text>
                 </ContentText>
                 <ImageBox>
                     <Person />

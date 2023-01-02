@@ -1,17 +1,16 @@
-import { Image } from "react-native";
 import { ContainerInputs, ContainerButtons } from "./style";
 
 
 import Container from "../../Components/Container";
 import { Input } from "../../Components/Input";
+import Hero from '../../Assets/svg/hero-signUp.svg'
 import { ButtonSign, Button } from "../../Components/Button";
-
 
 
 export default function SignUp() {
     return (
         <Container>
-            <Image source={require('../../Assets/img/SignUp.png')} />
+            <Hero />
             <ContainerInputs>
                 <Input
                     label="Nome"
