@@ -1,13 +1,21 @@
 import { StyleSheet } from "react-native";
 
-import Person from '../../Assets/svg/TESTE.svg';
+import Person from '../../Assets/svg/Person.svg';
+import SearchIcon from '../../Assets/svg/SearchIcon.svg';
+import FilterIcon from '../../Assets/svg/filter-icon';
+
 import { Text } from "../Text";
 
 import {
     Container,
     ContentText,
     Content,
-    ImageBox
+    ImageBox,
+    SearchContainer,
+    Search,
+    SearchInput,
+    SearchButton,
+    FilterButton
 } from "./style";
 
 export default function Header() {
@@ -26,6 +34,17 @@ export default function Header() {
                     <Person />
                 </ImageBox>
             </Content>
+            <SearchContainer>
+                <Search>
+                    <SearchInput />
+                    <SearchButton>
+                        <SearchIcon />
+                    </SearchButton>
+                </Search>
+                <FilterButton>
+                    <FilterIcon />
+                </FilterButton>
+            </SearchContainer>
         </Container>
     )
 }
