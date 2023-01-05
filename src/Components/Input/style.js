@@ -12,6 +12,8 @@ export const InputDefault = styled.TextInput`
     border-radius: 8px;
     height: 55px;
     padding: 16px;
+    box-shadow: 0px 7px 6px rgba(0, 0, 0, 0.1);
+    elevation: 5;
 `
 
 export const InputAreaPassword = styled.View`
@@ -23,7 +25,7 @@ export const InputAreaPassword = styled.View`
     padding: 0 16px;
 `
 
-export const InputPassword = styled(InputDefault)`
+export const Password = styled(InputDefault)`
     background-color: transparent;
     padding: 0;
     width: 90%;

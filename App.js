@@ -30,7 +30,7 @@ export default function App() {
     <ThemeProvider theme={StyledGuide}>
       <SafeAreaView>
         <StatusBar />
-        <Home />
+        <SignUp />
       </SafeAreaView>
     </ThemeProvider>
   );

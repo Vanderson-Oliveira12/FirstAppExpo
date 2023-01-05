@@ -1,13 +1,12 @@
 import {
-    Title,
-    ContainerTexts,
-    ContainerButtons,
+    Container,
+    TextContainer,
+    ButtonContainer,
 } from "./style";
 
-import { Text } from "../../Components/Text";
 
-import { Button } from "../../Components/Button";
-import Container from "../../Components/Container";
+import { Button } from "../../Components/Btn";
+import { Text } from "../../Components/Text";
 
 import Hero from '../../Assets/svg/hero-login.svg';
 import { StyleSheet } from "react-native";
@@ -16,7 +15,7 @@ export default function Login() {
     return (
         <Container>
             <Hero />
-            <ContainerTexts>
+            <TextContainer>
                 <Text weight="600" size={2.6} color="#364356">
                     Let's find the "A" with us
                 </Text>
@@ -24,11 +23,19 @@ export default function Login() {
                     Please Sign in to view personalized
                     recommendations
                 </Text>
-            </ContainerTexts>
-            <ContainerButtons>
-                <Button content="Sign Up" />
-                <Button transparent={true} content="Skip" />
-            </ContainerButtons>
+            </TextContainer>
+            <ButtonContainer>
+                <Button color="#5667FD">
+                    <Text weight="600" color="#FFF">
+                        Sign up
+                    </Text>
+                </Button>
+                <Button style={{ marginTop: 8 }}>
+                    <Text weight="400" color="#5667FD">
+                        Skip
+                    </Text>
+                </Button>
+            </ButtonContainer>
         </Container>
     )
 }
@@ -36,6 +43,6 @@ export default function Login() {
 const styles = StyleSheet.create({
     textDescription: {
         textAlign: "center",
-        marginTop: 16
+        marginTop: 16,
     }
 })

@@ -1,12 +1,14 @@
 import { StyleSheet } from "react-native";
-import Container from "../../Components/Container";
+
 import {
-    ContainerInputs,
-    ContainerButtons,
+    Container,
+    InputContainer,
+    ButtonContainer,
 } from "./style";
 
-import { Button, ButtonSign } from "../../Components/Button";
-import { Input } from "../../Components/Input";
+import { Text } from "../../Components/Text";
+import { Button } from "../../Components/Btn";
+import { InputText, InputPassword } from "../../Components/Input";
 
 import Hero from '../../Assets/svg/hero-signIn.svg';
 
@@ -14,28 +16,32 @@ export default function SignIn() {
     return (
         <Container>
             <Hero />
-            <ContainerInputs>
-                <Input label="Email" placeholder="Seu melhor E-mail..." />
-                <Input label="Senha" placeholder="******" />
-            </ContainerInputs>
-            <ContainerButtons>
-                <Button content="Sign in" />
-                <ButtonSign description="Don’t have account?" textButton="Sign up" />
-            </ContainerButtons>
+            <InputContainer>
+                <InputText label="Email" placeholder="Seu melhor E-mail..." />
+                <InputPassword label="Senha" placeholder="******" />
+            </InputContainer >
+            <ButtonContainer>
+                <Button color="#5667FD">
+                    <Text color="#FFF" weight="600">
+                        Sign in
+                    </Text>
+                </Button>
+                <Button style={styles.signUp}>
+                    <Text color="#636D77" style={{ marginRight: 8 }}>
+                        Não possui uma conta?
+                    </Text>
+                    <Text weight="400" color="#5667FD">
+                        Sign up
+                    </Text>
+                </Button>
+            </ButtonContainer>
         </Container>
     )
 }
 
 const styles = StyleSheet.create({
-    shadow: {
-        shadowColor: "#000000",
-        shadowOffset: {
-            width: 0,
-            height: 6,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 8.30,
-        elevation: 6,
-
-    }
+    signUp: {
+        marginTop: 8,
+        flexDirection: "row"
+    },
 })

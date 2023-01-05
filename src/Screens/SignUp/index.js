@@ -1,34 +1,57 @@
-import { ContainerInputs, ContainerButtons } from "./style";
+import {
+    Container,
+    InputContainer,
+    ButtonContainer
+} from "./style";
 
 
-import Container from "../../Components/Container";
-import { Input } from "../../Components/Input";
+import { StyleSheet } from "react-native";
+import { Text } from "../../Components/Text";
+import { InputText, InputPassword } from "../../Components/Input";
 import Hero from '../../Assets/svg/hero-signUp.svg'
-import { ButtonSign, Button } from "../../Components/Button";
+import { Button } from "../../Components/Btn";
 
 
 export default function SignUp() {
     return (
         <Container>
             <Hero />
-            <ContainerInputs>
-                <Input
+            <InputContainer>
+                <InputText
                     label="Nome"
                     placeholder="Seu nome"
-                    password={false} />
-                <Input
+                />
+                <InputText
                     label="Email"
                     placeholder="Seu melhor E-mail..."
-                    password={false} />
-                <Input
+                />
+                <InputPassword
                     label="Senha"
                     placeholder="******"
                 />
-            </ContainerInputs>
-            <ContainerButtons>
-                <Button content="Sign up" />
-                <ButtonSign description="You have account?" textButton="Sign in" />
-            </ContainerButtons>
+            </InputContainer>
+            <ButtonContainer>
+                <Button color="#5667FD">
+                    <Text color="#FFF" weight="600">
+                        Sign up
+                    </Text>
+                </Button>
+                <Button style={styles.signIn}>
+                    <Text color="#636D77" style={{ marginRight: 8 }}>
+                        Já possui uma conta?
+                    </Text>
+                    <Text weight="400" color="#5667FD">
+                        Sign in
+                    </Text>
+                </Button>
+            </ButtonContainer>
         </Container>
     )
 }
+
+const styles = StyleSheet.create({
+    signIn: {
+        marginTop: 8,
+        flexDirection: "row"
+    },
+})
