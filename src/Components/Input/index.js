@@ -5,9 +5,11 @@ import {
     InputAreaPassword,
 } from "./style";
 
+import { useState } from "react";
 import { Image, StyleSheet } from "react-native";
 
 import { Text } from "../../Components/Text";
+import { TouchableOpacity } from "react-native";
 
 export function InputText({ label, placeholder }) {
     return (
@@ -25,6 +27,13 @@ export function InputText({ label, placeholder }) {
 }
 
 export function InputPassword({ label, placeholder }) {
+
+    const [isPasswordVisible, setIsPasswordVisible] = useState(true);
+
+    function handlePasswordVisible() {
+        setIsPasswordVisible(prevState => prevState === true ? false : true)
+    }
+
     return (
         <Container>
             <Text
@@ -35,8 +44,10 @@ export function InputPassword({ label, placeholder }) {
                 {label}
             </Text>
             <InputAreaPassword>
-                <Password secureTextEntry={true} placeholder={placeholder} />
-                <Image source={require('../../Assets/img/eye.png')} />
+                <Password secureTextEntry={isPasswordVisible} placeholder={placeholder} />
+                <TouchableOpacity style={styles.password} onPress={handlePasswordVisible}>
+                    <Image source={require('../../Assets/img/eye.png')} />
+                </TouchableOpacity>
             </InputAreaPassword>
         </Container>
     )
@@ -45,5 +56,12 @@ export function InputPassword({ label, placeholder }) {
 const styles = StyleSheet.create({
     label: {
         marginBottom: 11
+    },
+    password: {
+        backgroundColor: 'red',
+        height: 55,
+        width: "10%",
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 })

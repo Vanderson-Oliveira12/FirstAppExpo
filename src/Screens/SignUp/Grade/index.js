@@ -1,22 +1,22 @@
 
 import {
     Container,
-    Title,
     Content,
     ContainerButtons
 } from "./style";
 
-import { Button } from "../../../Components/Button";
+import { Button } from "../../../Components/Btn";
 import Select, { SelectItems } from "../../../Components/Select";
 
 import { art, cience, math, regua } from "../../../Assets/img/image";
+import { Text } from "../../../Components/Text";
 
 
 const dataRadio = [
-    { value: "Arts", image: art },
-    { value: "Science", image: cience },
-    { value: "Maths", image: regua },
-    { value: "Commerce", image: math }
+    { value: "Artes", image: art },
+    { value: "Ciências", image: cience },
+    { value: "Geometria", image: regua },
+    { value: "Matemática", image: math }
 ]
 
 export default function Grade() {
@@ -26,34 +26,55 @@ export default function Grade() {
             contentContainerStyle={{ flexGrow: 1, justifyContent: 'space-between' }}
         >
             <Content>
-                <Title>
-                    What's your grade?
-                </Title>
+                <Text
+                    color="#364356"
+                    weight="600"
+                    size={2.5}
+                    style={{ marginTop: 16 }}
+                >
+                    Qual é a sua nota?
+                </Text>
                 <Select
-                    grade="Grade  1 - 5"
+                    grade="Grau 1 - 5"
                 >
                     <SelectItems data={dataRadio} />
                 </Select>
                 <Select
-                    grade="Grade  6 - 9"
+                    grade="Grau 6 - 9"
                 >
                     <SelectItems data={dataRadio} />
                 </Select>
                 <Select
-                    grade="Grade  10 - 11"
+                    grade="Grau 10 - 11"
                 >
                     <SelectItems data={dataRadio} />
 
                 </Select>
                 <Select
-                    grade="Grade  12 - 13"
+                    grade="Grau 12 - 13"
                 >
                     <SelectItems data={dataRadio} />
                 </Select>
             </Content>
             <ContainerButtons>
-                <Button content="Sign Up" />
-                <Button transparent={true} content="Skip" />
+                <Button
+                    color="#5667FD"
+                >
+                    <Text
+                        weight="600"
+                        color="#FFF"
+                    >
+                        Próximo
+                    </Text>
+                </Button>
+                <Button style={{ marginTop: 8 }}>
+                    <Text
+                        color="#5667FD"
+                        weight="400"
+                    >
+                        Pular
+                    </Text>
+                </Button>
             </ContainerButtons>
         </Container>
     );
